@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group SRC Solutions - Desarrollo Web Profesional</title>
+  <meta name="description" content="Soluciones digitales a medida para tu negocio. Desarrollo web, sistemas personalizados y consultoría tecnológica.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.imgur.com/xyz1234.png" type="image/png">
+  
+  <!-- Fuentes -->
+   <link rel="stylesheet" href="includes/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+      --text-color: #333;
+      --text-light: #7f8c8d;
+      --white: #fff;
+      --black: #000;
+      --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text-color);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Estilos del header, hero y otras secciones... (copiar del CSS completo abajo) */
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">
+      <span>GroupSRC Solutions</span>
+      <span class="tagline">Innovación digital a tu medida</span>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Menú">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="nav">
+      <ul>
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+        <li><a href="#estadisticas" class="nav-link">Resultados</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1 class="reveal">Soluciones digitales que impulsan tu negocio</h1>
+      <p class="reveal delay-1">Transformamos tus ideas en herramientas poderosas para el crecimiento</p>
+      <div class="reveal delay-2">
+        <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+        <a href="#servicios" class="btn btn-outline">Nuestros servicios</a>
+      </div>
+    </div>
+    
+    <a href="#servicios" class="scroll-down" aria-label="Desplazarse hacia abajo">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="card-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="card-title">Desarrollo Web</h3>
+          <p>Sitios web modernos y responsivos diseñados para convertir visitantes en clientes, con optimización SEO integrada.</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Diseño personalizado</li>
+            <li><i class="fas fa-check"></i> Mobile-first</li>
+            <li><i class="fas fa-check"></i> Optimización SEO</li>
+          </ul>
+        </div>
+        
+        <div class="card reveal delay-1">
+          <div class="card-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="card-title">Sistemas Personalizados</h3>
+          <p>Software a medida que automatiza tus procesos críticos, aumentando eficiencia y reduciendo errores.</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> CRM y ERP</li>
+            <li><i class="fas fa-check"></i> Gestión de inventario</li>
+            <li><i class="fas fa-check"></i> Reportes automatizados</li>
+          </ul>
+        </div>
+        
+        <div class="card reveal delay-2">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="card-title">Menú Digital</h3>
+          <p>Transforma tu carta o catálogo en una experiencia digital interactiva que tus clientes amarán.</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Código QR integrado</li>
+            <li><i class="fas fa-check"></i> Actualizaciones en tiempo real</li>
+            <li><i class="fas fa-check"></i> Integración con redes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sección de Estadísticas -->
+  <section id="estadisticas" class="stats-section section-dark">
+    <div class="container">
+      <h2 class="section-title">Nuestro Impacto en Números</h2>
+      <p class="section-subtitle">Resultados tangibles que hablan por nuestro trabajo</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-count="7">0</h3>
+            <p class="stat-label">Proyectos Completados</p>
+          </div>
+        </div>
+        
+        <div class="stat-card reveal delay-1">
+          <div class="stat-icon">
+            <i class="fas fa-smile-beam"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-count="10">0</h3>
+            <p class="stat-label">Clientes Satisfechos</p>
+            <div class="stat-detail">+95% de satisfacción</div>
+          </div>
+        </div>
+        
+        <div class="stat-card reveal delay-2">
+          <div class="stat-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="stat-content">
+            <h3 class="stat-number" data-count="03">0</h3>
+            <p class="stat-label">Años de Experiencia</p>
+            <div class="stat-detail">Desde 2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <div class="grid">
+        <div class="testimonial reveal">
+          <div class="testimonial-content">
+            <p>El equipo de Panda transformó completamente nuestra presencia digital. En 3 meses duplicamos nuestras ventas online y optimizamos todos nuestros procesos internos con su sistema personalizado.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/cliente1.jpg" alt="María López">
+            <div class="author-info">
+              <h4>María López</h4>
+              <p>CEO, Tienda XYZ</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial reveal delay-1">
+          <div class="testimonial-content">
+            <p>Como restaurante, necesitábamos una solución rápida para reemplazar nuestros menús físicos. Panda desarrolló un menú digital con QR en tiempo récord, y nuestros clientes lo aman. ¡Altamente recomendados!</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/cliente2.jpg" alt="Carlos Méndez">
+            <div class="author-info">
+              <h4>Carlos Méndez</h4>
+              <p>Dueño, Restaurante Sabores</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-subtitle">Estamos listos para convertir tus ideas en realidad</p>
+      
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-detail">
+              <h3>Ubicación</h3>
+              <p>Aragua Maracay-Venezuela </p>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-detail">
+              <h3>Correo Electrónico</h3>
+              <p>gruposrc007@gmail.com</p>
+              
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-detail">
+              <h3>Teléfonos</h3>
+              <p>+58 4243660422 (WhatsApp)</p>
+            </div>
+          </div>
+          
+          <div class="contact-social">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container reveal delay-1">
+          <form id="form-contacto" class="contact-form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Teléfono (opcional)">
+            </div>
+            <div class="form-group">
+              <select class="form-control" required>
+                <option value="" disabled selected>Servicio de interés</option>
+                <option>Desarrollo Web</option>
+                <option>Sistemas Personalizados</option>
+                <option>Menú Digital</option>
+                <option>Consultoría</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="btn-text">Enviar mensaje</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>GroupSRC Solutions</h3>
+        <p>Transformamos negocios a través de soluciones digitales innovadoras y personalizadas.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; <span id="current-year"></span> GroupSRC Solutions. Todos los derechos reservados.</p>
+    </div>
+    
+    <a href="#inicio" class="back-to-top" aria-label="Volver arriba">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </footer>
+
+  <!-- JavaScript -->
+   <script src="includes/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+
+    // JavaScript completo aquí (copiar del siguiente bloque)
+  </script>
+</body>
+</html>
