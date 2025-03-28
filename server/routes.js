@@ -35,8 +35,8 @@ router.post('/contact', (req, res) => {
     // Enviar email de notificación
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'santiagoabab181@gmail.com',
-      subject: 'Nuevo mensaje de contacto - Panda Solutions',
+      to: 'gruposrc007@gmail.com',
+      subject: 'Nuevo mensaje de contacto - SRC Solutions',
       html: `
         <h2>Nuevo Contacto</h2>
         <p><strong>Nombre:</strong> ${name}</p>
