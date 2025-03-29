@@ -12,18 +12,25 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-router.post('/contact', async (req, res) => {
+// Ruta para manejar el formulario de contacto
+router.post('/contact', (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
+  // Validación básica
   if (!name || !email || !service || !message) {
     return res.status(400).json({ error: 'Todos los campos requeridos deben ser completados' });
   }
 
-  try {
-    await db.query(
-      'INSERT INTO contacts (name, email, phone, service, message) VALUES ($1, $2, $3, $4, $5)',
-      [name, email, phone, service, message]
-    );
+  const stmt = db.prepare(`
+    INSERT INTO contacts (name, email, phone, service, message)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+
+  stmt.run(name, email, phone, service, message, (err) => {
+    if (err) {
+      console.error('Error inserting contact:', err);
+      return res.status(500).json({ error: 'Error al procesar tu solicitud' });
+    }
 
     // Enviar email de notificación
     const mailOptions = {
@@ -47,20 +54,9 @@ router.post('/contact', async (req, res) => {
     });
 
     res.json({ success: true, message: 'Mensaje enviado exitosamente' });
-  } catch (err) {
-    console.error('Error inserting contact:', err);
-    res.status(500).json({ error: 'Error al procesar tu solicitud' });
-  }
-});
+  });
 
-router.get('/contacts', async (req, res) => {
-  try {
-    const result = await db.query('SELECT * FROM contacts');
-    res.json(result.rows);
-  } catch (err) {
-    console.error('Error fetching contacts:', err);
-    res.status(500).json({ error: 'Error al obtener los contactos' });
-  }
+  stmt.finalize();
 });
 
 module.exports = router;
