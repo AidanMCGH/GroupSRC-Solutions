@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('./db');
+const pool = require('./db');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -8,12 +8,12 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
+    pass: process.env.EMAIL_PASS,
+  },
 });
 
 // Ruta para manejar el formulario de contacto
-router.post('/contact', (req, res) => {
+router.post('/contact', async (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
   // Validación básica
@@ -21,16 +21,11 @@ router.post('/contact', (req, res) => {
     return res.status(400).json({ error: 'Todos los campos requeridos deben ser completados' });
   }
 
-  const stmt = db.prepare(`
-    INSERT INTO contacts (name, email, phone, service, message)
-    VALUES (?, ?, ?, ?, ?)
-  `);
-
-  stmt.run(name, email, phone, service, message, (err) => {
-    if (err) {
-      console.error('Error inserting contact:', err);
-      return res.status(500).json({ error: 'Error al procesar tu solicitud' });
-    }
+  try {
+    await pool.query(
+      `INSERT INTO contacts (name, email, phone, service, message) VALUES ($1, $2, $3, $4, $5)`,
+      [name, email, phone, service, message]
+    );
 
     // Enviar email de notificación
     const mailOptions = {
@@ -44,7 +39,7 @@ router.post('/contact', (req, res) => {
         <p><strong>Teléfono:</strong> ${phone || 'No proporcionado'}</p>
         <p><strong>Servicio:</strong> ${service}</p>
         <p><strong>Mensaje:</strong> ${message}</p>
-      `
+      `,
     };
 
     transporter.sendMail(mailOptions, (error) => {
@@ -54,9 +49,10 @@ router.post('/contact', (req, res) => {
     });
 
     res.json({ success: true, message: 'Mensaje enviado exitosamente' });
-  });
-
-  stmt.finalize();
+  } catch (err) {
+    console.error('Error inserting contact:', err);
+    res.status(500).json({ error: 'Error al procesar tu solicitud' });
+  }
 });
 
 module.exports = router;
