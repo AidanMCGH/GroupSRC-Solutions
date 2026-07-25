@@ -1,358 +1,471 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SRC es un proyecto web que ofrece soluciones de desarrollo web y software a medida.">
-  <meta name="keywords" content="desarrollo web, software a medida, diseño web, aplicaciones web">
-  <meta name="author" content="SRC">
-  <title>SRC - Desarrollo Web y Software</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" href="images/IMG-20250327-WA0038.jpg" type="image/png">
-  
-  <!-- Fuentes -->
-   <link rel="stylesheet" href="includes/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- CSS -->
-  <style>
-    :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #3498db;
-      --accent-color: #e74c3c;
-      --light-color: #ecf0f1;
-      --dark-color: #2c3e50;
-      --text-color: #333;
-      --text-light: #7f8c8d;
-      --white: #fff;
-      --black: #000;
-      --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Grupo SRC Solutions — Software a la medida de su operación</title>
+  <meta name="description" content="Diseñamos y construimos software a medida para empresas: sistemas de gestión, automatización de procesos, integraciones, APIs y dashboards.">
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <link rel="canonical" href="https://gruposrc.com/">
+  <link rel="icon" href="images/IMG-20250327-WA0038.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="images/IMG-20250327-WA0038.jpg">
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      color: var(--text-color);
-      background-color: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Grupo SRC Solutions">
+  <meta property="og:title" content="Grupo SRC Solutions — Software a la medida de su operación">
+  <meta property="og:description" content="Diseñamos y construimos software a medida para empresas que necesitan resolver un problema concreto.">
+  <!-- TODO: reemplazar por una imagen Open Graph de marca (1200×630) -->
+  <meta property="og:image" content="images/IMG-20250327-WA0038.jpg">
+  <meta name="twitter:card" content="summary">
 
-  
-  </style>
+  <!-- Fuentes autoalojadas: precarga solo el display del primer bloque visible -->
+  <link rel="preload" href="includes/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="includes/styles.css">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grupo SRC Solutions",
+    "description": "Desarrollo de software a la medida para empresas.",
+    "email": "gruposrc007@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Maracay",
+      "addressRegion": "Aragua",
+      "addressCountry": "VE"
+    },
+    "sameAs": [
+      "https://www.instagram.com/grupo_src",
+      "https://github.com/AidanMCGH"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-spinner"></div>
-  </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- Header -->
-  <header id="header">
-    <div class="logo">
-      <span>GrupoSRC Solutions</span>
-      <span class="tagline">Innovación digital a tu medida</span>
-    </div>
-    
-    <button class="menu-toggle" aria-label="Menú">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <nav id="nav">
-      <ul>
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
-        <li><a href="#estadisticas" class="nav-link">Resultados</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="inicio" class="hero">
-    <div class="hero-content">
-      <h1 class="reveal">Soluciones digitales que impulsan tu negocio</h1>
-      <p class="reveal delay-1">Transformamos tus ideas en herramientas poderosas para el crecimiento</p>
-      <div class="reveal delay-2">
-        <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-        <a href="#servicios" class="btn btn-outline">Nuestros servicios</a>
-      </div>
-    </div>
-    
-    <a href="#servicios" class="scroll-down" aria-label="Desplazarse hacia abajo">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </section>
-
-  <!-- Servicios Section -->
-  <section id="servicios" class="section">
+  <!-- ============================================================ Header -->
+  <header class="site-header">
     <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <div class="grid">
-        <div class="card reveal">
-          <div class="card-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <h3 class="card-title">Desarrollo Web</h3>
-          <p>Sitios web modernos y responsivos diseñados para convertir visitantes en clientes, con optimización SEO integrada.</p>
-          <ul class="features-list">
-            <li><i class="fas fa-check"></i> Diseño personalizado</li>
-            <li><i class="fas fa-check"></i> Mobile-first</li>
-            <li><i class="fas fa-check"></i> Optimización SEO</li>
-          </ul>
-        </div>
-        
-        <div class="card reveal delay-1">
-          <div class="card-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3 class="card-title">Sistemas Personalizados</h3>
-          <p>Software a medida que automatiza tus procesos críticos, aumentando eficiencia y reduciendo errores.</p>
-          <ul class="features-list">
-            <li><i class="fas fa-check"></i> CRM y ERP</li>
-            <li><i class="fas fa-check"></i> Gestión de inventario</li>
-            <li><i class="fas fa-check"></i> Reportes automatizados</li>
-          </ul>
-        </div>
-        
-        <div class="card reveal delay-2">
-          <div class="card-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3 class="card-title">Menú Digital</h3>
-          <p>Transforma tu carta o catálogo en una experiencia digital interactiva que tus clientes amarán.</p>
-          <ul class="features-list">
-            <li><i class="fas fa-check"></i> Código QR integrado</li>
-            <li><i class="fas fa-check"></i> Actualizaciones en tiempo real</li>
-            <li><i class="fas fa-check"></i> Integración con redes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <a class="brand" href="#inicio" aria-label="Grupo SRC Solutions — inicio">
+        <img src="images/IMG-20250327-WA0038.jpg" width="34" height="34" alt="" aria-hidden="true">
+        <span class="brand-name">Grupo SRC Solutions</span>
+      </a>
 
+      <button class="nav-toggle" aria-label="Abrir menú" aria-controls="nav-list" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
 
-  <!-- Sección de Estadísticas -->
-  <section id="estadisticas" class="stats-section section-dark">
-    <div class="container">
-      <h2 class="section-title">Nuestro Impacto en Números</h2>
-      <p class="section-subtitle">Resultados tangibles que hablan por nuestro trabajo</p>
-      
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <div class="stat-icon">
-            <i class="fas fa-project-diagram"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-count="7">0</h3>
-            <p class="stat-label">Proyectos Completados</p>
-          </div>
-        </div>
-        
-        <div class="stat-card reveal delay-1">
-          <div class="stat-icon">
-            <i class="fas fa-smile-beam"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-count="10">0</h3>
-            <p class="stat-label">Clientes Satisfechos</p>
-            <div class="stat-detail">+95% de satisfacción</div>
-          </div>
-        </div>
-        
-        <div class="stat-card reveal delay-2">
-          <div class="stat-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <div class="stat-content">
-            <h3 class="stat-number" data-count="03">0</h3>
-            <p class="stat-label">Años de Experiencia</p>
-            <div class="stat-detail">Desde 2022</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonios Section -->
-  <section id="testimonios" class="section">
-    <div class="container">
-      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-      <div class="grid">
-        <div class="testimonial reveal">
-          <div class="testimonial-content">
-            <p>El equipo de SRC transformó completamente nuestros procesos manuales. En 3 meses duplicamos nuestras ventas y optimizamos todos nuestros procesos internos con su sistema personalizado.</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="images/cliente1.jpg" alt="Cliente1">
-            <div class="author-info">
-              <h4>María López</h4>
-              <p>CEO, SIASUR</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial reveal delay-1">
-          <div class="testimonial-content">
-            <p>Como restaurante, necesitábamos una solución rápida para reemplazar nuestros menús físicos. SRC desarrolló un menú digital con QR en tiempo récord, y nuestros clientes lo aman. ¡Altamente recomendados!</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="images/cliente2.jpg" alt="Cliente2">
-            <div class="author-info">
-              <h4>Carla Ménendez</h4>
-              <p>Dueño, Restaurante True</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección de Contacto -->
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2 class="section-title">Contáctanos</h2>
-      <p class="section-subtitle">Estamos listos para convertir tus ideas en realidad</p>
-      
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-detail">
-              <h3>Ubicación</h3>
-              <p>Aragua Maracay-Venezuela </p>
-            </div>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-detail">
-              <h3>Correo Electrónico</h3>
-              <p>gruposrc007@gmail.com</p>
-            </div>
-          </div>
-          
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <div class="contact-detail">
-              <h3>Teléfonos</h3>
-              <p>+58 4243660422 (WhatsApp)</p>
-            </div>
-          </div>
-          
-          <div class="contact-social">
-            <h3>Síguenos</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/grupo_src?igsh=MXFrOGVrN25YEJjZCa==" class="social-link" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://github.com/AidanMCGH" class="social-link" aria-label="Github">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="social-link" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="contact-form-container reveal delay-1">
-          <form id="form-contacto" class="contact-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre completo" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Correo electrónico" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" class="form-control" placeholder="Teléfono (opcional)">
-            </div>
-            <div class="form-group">
-              <select class="form-control" required>
-                <option value="" disabled selected>Servicio de interés</option>
-                <option>Desarrollo Web</option>
-                <option>Sistemas Personalizados</option>
-                <option>Menú Digital</option>
-                <option>Consultoría</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              <span class="btn-text">Enviar mensaje</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-column">
-        <h3>GrupoSRC Solutions</h3>
-        <p>Transformamos negocios a través de soluciones digitales innovadoras y personalizadas.</p>
-      </div>
-      <div class="footer-column">
-        <h3>Enlaces rápidos</h3>
-        <ul class="footer-links">
-          <li><a href="#inicio">Inicio</a></li>
+      <nav aria-label="Principal">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#problemas">Problemas</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#obras">Desarrollos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ========================================================== Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-rings" aria-hidden="true"></div>
+      <div class="hero-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <span class="eyebrow">Grupo SRC · Solutions</span>
+        <h1 class="display-hero">Software a la medida de su operación.</h1>
+        <p>Diseñamos y construimos sistemas para empresas que necesitan resolver un problema concreto: procesos manuales, información dispersa o software que ya no acompaña el ritmo del negocio.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">
+            Conversemos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#servicios">Ver qué hacemos</a>
+        </div>
+        <div class="hero-meta">
+          <span>Sistemas a medida</span>
+          <span>Automatización</span>
+          <span>Integraciones</span>
+          <span>Dashboards</span>
+        </div>
       </div>
-      <div class="footer-column">
-        <h3>Legal</h3>
-        <ul class="footer-links">
-          <li><a href="legal.html">Términos y condiciones</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-        </ul>
+    </section>
+
+    <!-- ==================================================== Problemas -->
+    <section class="section" id="problemas">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Qué problemas resolvemos</span>
+          <h2>Si algo de esto le resulta familiar, hay un sistema esperando ser construido.</h2>
+        </div>
+        <div class="grid-problemas">
+          <article class="problema reveal">
+            <span class="num">01</span>
+            <h3>Todo pasa por Excel</h3>
+            <p>Planillas que se duplican, se rompen y dependen de una sola persona que sabe cómo funcionan.</p>
+          </article>
+          <article class="problema reveal">
+            <span class="num">02</span>
+            <h3>Sistemas que no se hablan</h3>
+            <p>La misma información cargada dos o tres veces en herramientas que no comparten datos.</p>
+          </article>
+          <article class="problema reveal">
+            <span class="num">03</span>
+            <h3>Decisiones a ciegas</h3>
+            <p>Los datos existen, pero llegan tarde o en reportes que hay que armar a mano cada mes.</p>
+          </article>
+          <article class="problema reveal">
+            <span class="num">04</span>
+            <h3>Software que no se adapta</h3>
+            <p>Un producto cerrado que obliga a cambiar el proceso del negocio en lugar de acompañarlo.</p>
+          </article>
+          <article class="problema reveal">
+            <span class="num">05</span>
+            <h3>Tareas repetitivas</h3>
+            <p>Horas de trabajo humano en copiar, pegar, validar y reenviar lo que un sistema puede hacer solo.</p>
+          </article>
+          <article class="problema reveal">
+            <span class="num">06</span>
+            <h3>El crecimiento se frena</h3>
+            <p>Cada cliente o sucursal nueva multiplica el trabajo manual en lugar de absorberlo la tecnología.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== Servicios -->
+    <section class="section section-alt" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Servicios</span>
+          <h2>Nueve formas de resolverlo.</h2>
+        </div>
+        <div class="grid-servicios">
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8 8 4 12 8 16"/><polyline points="16 8 20 12 16 16"/><line x1="13.5" y1="6" x2="10.5" y2="18"/></svg></span>
+            <h3>Desarrollo web</h3>
+            <p>Sitios y plataformas rápidas, seguras y preparadas para crecer.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 13l9 5 9-5"/><path d="M3 16.5 12 21.5 21 16.5"/></svg></span>
+            <h3>Sistemas empresariales</h3>
+            <p>Software de gestión a medida para operación y control interno.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a5 5 0 0 1 5-5h6"/><polyline points="13 1 16 4 13 7"/><path d="M20 15a5 5 0 0 1-5 5H9"/><polyline points="11 23 8 20 11 17"/></svg></span>
+            <h3>Automatización de procesos</h3>
+            <p>Tareas repetitivas convertidas en flujos con reglas y alertas.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4a3 3 0 0 0-3 3v2a2 2 0 0 1-2 2 2 2 0 0 1 2 2v2a3 3 0 0 0 3 3"/><path d="M16 4a3 3 0 0 1 3 3v2a2 2 0 0 0 2 2 2 2 0 0 0-2 2v2a3 3 0 0 1-3 3"/></svg></span>
+            <h3>APIs</h3>
+            <p>Interfaces documentadas para que otros sistemas consuman sus datos.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 6.5 12.5 5a4 4 0 0 1 5.6 5.6L16.6 12"/><path d="M13 17.5 11.5 19a4 4 0 0 1-5.6-5.6L7.4 12"/></svg></span>
+            <h3>Integraciones</h3>
+            <p>Conexión entre sistemas propios y de terceros para que el dato fluya.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="20"/><line x1="7" y1="20" x2="7" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="17" y1="20" x2="17" y2="15"/></svg></span>
+            <h3>Dashboards</h3>
+            <p>Indicadores del negocio actualizados, en una sola pantalla.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><path d="M13 16.5h7M16.5 13v7"/></svg></span>
+            <h3>Aplicaciones personalizadas</h3>
+            <p>Herramientas para un flujo que ningún producto estándar cubre.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L18 9l-3-3L5 16l-1 4Z"/><line x1="13.5" y1="7.5" x2="16.5" y2="10.5"/></svg></span>
+            <h3>Diseño UI/UX</h3>
+            <p>Interfaces claras, pensadas para usarse sin capacitación extensa.</p>
+          </article>
+          <article class="servicio reveal">
+            <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polygon points="15.5 8.5 11 11 8.5 15.5 13 13 15.5 8.5"/></svg></span>
+            <h3>Consultoría tecnológica</h3>
+            <p>Diagnóstico, arquitectura y acompañamiento en decisiones técnicas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ Cómo trabajamos -->
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2>Nueve etapas, tres momentos.</h2>
+        </div>
+        <div class="momentos">
+          <div class="momento reveal">
+            <span class="eyebrow">Entender</span>
+            <div class="paso"><span class="disco">01</span><span class="paso-nombre">Reunión</span></div>
+            <div class="paso"><span class="disco">02</span><span class="paso-nombre">Descubrimiento</span></div>
+            <div class="paso"><span class="disco">03</span><span class="paso-nombre">Análisis</span></div>
+          </div>
+          <div class="momento reveal">
+            <span class="eyebrow">Construir</span>
+            <div class="paso"><span class="disco">04</span><span class="paso-nombre">Diseño</span></div>
+            <div class="paso"><span class="disco">05</span><span class="paso-nombre">Desarrollo</span></div>
+            <div class="paso"><span class="disco">06</span><span class="paso-nombre">Pruebas</span></div>
+          </div>
+          <div class="momento reveal">
+            <span class="eyebrow">Adoptar</span>
+            <div class="paso"><span class="disco">07</span><span class="paso-nombre">Implementación</span></div>
+            <div class="paso"><span class="disco">08</span><span class="paso-nombre">Capacitación</span></div>
+            <div class="paso"><span class="disco senal">09</span><span class="paso-nombre">Soporte</span></div>
+          </div>
+        </div>
+        <p class="proceso-nota">Cada etapa termina con algo concreto que usted puede revisar y aprobar antes de que sigamos. <strong>El soporte (09) no tiene fecha de cierre.</strong></p>
+      </div>
+    </section>
+
+    <!-- ================================================== Tecnologías -->
+    <section class="section section-alt" id="tecnologias">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Tecnologías</span>
+          <h2>Herramientas maduras, elegidas por criterio.</h2>
+          <p class="lead">Trabajamos con tecnologías estables, ampliamente adoptadas y con comunidad activa. Eso protege al cliente: su sistema no depende de una herramienta de moda ni de un único proveedor capaz de mantenerlo.</p>
+        </div>
+        <div class="tech-lista">
+          <div class="tech-capa">
+            <span class="capa-nombre">Backend</span>
+            <div class="chips"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">Node.js</span></div>
+          </div>
+          <div class="tech-capa">
+            <span class="capa-nombre">Frontend</span>
+            <div class="chips"><span class="chip">Vue</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span></div>
+          </div>
+          <div class="tech-capa">
+            <span class="capa-nombre">Datos</span>
+            <div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span></div>
+          </div>
+          <div class="tech-capa">
+            <span class="capa-nombre">Infraestructura</span>
+            <div class="chips"><span class="chip">Docker</span><span class="chip">Linux</span></div>
+          </div>
+          <div class="tech-capa">
+            <span class="capa-nombre">Versionado e integración</span>
+            <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">REST API</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ Desarrollos propios -->
+    <section class="section" id="obras">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Desarrollos propios</span>
+          <h2>Todavía no publicamos casos de clientes. Esto es lo que sí podemos mostrar.</h2>
+          <p class="lead">Tres sistemas construidos por el equipo, en funcionamiento. Son desarrollos propios, no proyectos contratados por terceros.</p>
+        </div>
+        <div class="grid-obras">
+          <article class="obra reveal">
+            <!-- TODO: captura pendiente — reemplazar este marcador por una captura real del sistema -->
+            <div class="obra-captura"><span>Captura pendiente</span></div>
+            <div class="obra-cuerpo">
+              <h3>Foro académico UNEFA</h3>
+              <p>Foro de conocimiento para estudiantes, profesores y personal del Núcleo Aragua: preguntas, publicaciones y comunidades temáticas, con registro por correo institucional.</p>
+              <span class="meta">Registro por dominio · perfiles y permisos · moderación</span>
+            </div>
+          </article>
+          <article class="obra reveal">
+            <!-- TODO: captura pendiente — reemplazar este marcador por una captura real del sistema -->
+            <div class="obra-captura"><span>Captura pendiente</span></div>
+            <div class="obra-cuerpo">
+              <h3>Sitio institucional SRC</h3>
+              <p>Nuestro propio sitio corporativo: landing estática, rápida y de bajo mantenimiento, con un backend mínimo para el formulario de contacto.</p>
+              <span class="meta">Sitio estático · formulario con backend · captación de contactos</span>
+            </div>
+          </article>
+          <article class="obra reveal">
+            <!-- TODO: captura pendiente — reemplazar este marcador por una captura real del sistema -->
+            <div class="obra-captura"><span>Captura pendiente</span></div>
+            <div class="obra-cuerpo">
+              <h3>App de seguimiento de hábitos</h3>
+              <p>Seguimiento de hábitos con gamificación: metas individuales, grupos y competencia por rachas y logros entre los participantes.</p>
+              <span class="meta">Reglas por tiempo · métricas y rankings · adopción de usuarios</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ Calidad y seguridad -->
+    <section class="section section-alt" id="calidad">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Calidad y seguridad</span>
+          <h2>Cómo cuidamos lo que entregamos.</h2>
+        </div>
+        <div class="dos-bloques">
+          <div class="bloque reveal">
+            <h3>Calidad</h3>
+            <ul class="lista-check">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Control de versiones</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Revisión de código antes de publicar</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Entornos separados</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Pruebas antes de cada entrega</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Documentación entregable</li>
+            </ul>
+            <p class="destacada">Una funcionalidad está terminada cuando cumple lo acordado, fue probada, está documentada y la persona que va a usarla sabe cómo hacerlo.</p>
+          </div>
+          <div class="bloque reveal">
+            <h3>Seguridad</h3>
+            <ul class="lista-check">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Accesos por rol</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Cifrado en tránsito (HTTPS/TLS)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Respaldos periódicos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Gestión segura de credenciales</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Acuerdos de confidencialidad</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>Actualizaciones</li>
+            </ul>
+            <p class="destacada">El código fuente, la base de datos y la documentación son propiedad del cliente. Sin bloqueos ni condiciones para migrar de proveedor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== Por qué elegirnos -->
+    <section class="section section-dark" id="porque">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Por qué elegirnos</span>
+          <h2>Cuatro razones, sin adornos.</h2>
+        </div>
+        <div class="razones">
+          <div class="razon reveal"><span class="num">01</span><h3>Hablamos de negocio</h3></div>
+          <div class="razon reveal"><span class="num">02</span><h3>Alcance y precio definidos</h3></div>
+          <div class="razon reveal"><span class="num">03</span><h3>Avances, no promesas</h3></div>
+          <div class="razon reveal"><span class="num">04</span><h3>El resultado queda en su empresa</h3></div>
+        </div>
+        <p class="honestidad">Estamos empezando y preferimos decirlo antes que inventar una trayectoria. No tenemos veinte años de historia ni una cartera de clientes que mostrar. Lo que sí ofrecemos es dedicación completa a cada proyecto, criterio técnico y el compromiso de un equipo que construye su reputación con cada entrega.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== Contacto -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contacto-grid">
+          <div class="contacto-info">
+            <div class="section-head" style="margin-bottom:var(--e6)">
+              <span class="eyebrow">Contacto</span>
+              <h2>Conversemos sobre lo que necesita construir.</h2>
+              <p class="lead">Cuéntenos qué proceso le está costando tiempo o dinero. La primera conversación es sin costo y sin compromiso.</p>
+            </div>
+            <div class="contacto-datos">
+              <div class="dato">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <div><h3>Ubicación</h3><p>Maracay, Aragua — Venezuela</p></div>
+              </div>
+              <div class="dato">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <div><h3>Correo</h3><p><a href="mailto:gruposrc007@gmail.com">gruposrc007@gmail.com</a></p></div>
+              </div>
+              <div class="dato">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+                <!-- TODO: confirmar número real de WhatsApp -->
+                <div><h3>WhatsApp</h3><p><a href="https://wa.me/584243660422">+58 424 366 0422</a></p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contacto-form">
+            <form id="form-contacto" class="form" novalidate>
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre">
+                <span class="error-msg" id="err-nombre" role="alert"></span>
+              </div>
+              <div class="campo">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" autocomplete="email" required aria-describedby="err-correo">
+                <span class="error-msg" id="err-correo" role="alert"></span>
+              </div>
+              <div class="campo">
+                <label for="empresa">Empresa <span aria-hidden="true">(opcional)</span></label>
+                <input type="text" id="empresa" name="empresa" autocomplete="organization">
+              </div>
+              <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="err-mensaje"></textarea>
+                <span class="error-msg" id="err-mensaje" role="alert"></span>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-text">Enviar mensaje</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+              </button>
+              <p class="form-estado" role="status" aria-live="polite"></p>
+              <!-- TODO: confirmar el plazo real de respuesta -->
+              <p class="form-nota">Sus datos se usan únicamente para responder a esta consulta; no se comparten con terceros. Solemos responder en un plazo breve.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="images/IMG-20250327-WA0038.jpg" width="32" height="32" alt="" aria-hidden="true">
+            <span>Grupo SRC Solutions</span>
+          </div>
+          <p>Desarrollo de software a la medida de su operación.</p>
+          <div class="social">
+            <!-- TODO: confirmar enlaces reales de redes sociales -->
+            <a href="https://www.instagram.com/grupo_src" aria-label="Instagram de Grupo SRC" rel="noopener" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17" y1="7" x2="17" y2="7"/></svg>
+            </a>
+            <a href="https://github.com/AidanMCGH" aria-label="GitHub de Grupo SRC" rel="noopener" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.4-4-2-6-2m12 4v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6 3.4 5 3.7 5 3.7a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.5 10c0 4.6 2.8 5.6 5.5 6a3 3 0 0 0-.8 2.3V22"/></svg>
+            </a>
+            <a href="https://wa.me/584243660422" aria-label="WhatsApp de Grupo SRC" rel="noopener" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 9c0 4 2.5 6.5 6.5 6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>Secciones</h3>
+          <ul class="footer-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#obras">Desarrollos propios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="legal.html#terminos">Términos y condiciones</a></li>
+            <li><a href="legal.html#privacidad">Aviso de privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>&copy; <span id="anio"></span> Grupo SRC Solutions.</span>
+        <span>Maracay, Aragua — Venezuela</span>
       </div>
     </div>
-    
-    <div class="copyright">
-      <p>&copy; <span id="current-year"></span> GroupSRC Solutions. Todos los derechos reservados.</p>
-    </div>
-    
-    <a href="#inicio" class="back-to-top" aria-label="Volver arriba">
-      <i class="fas fa-arrow-up"></i>
-    </a>
   </footer>
 
-  <!-- JavaScript -->
-   <script src="includes/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script>
-
-    // JavaScript completo aquí (copiar del siguiente bloque)
-  </script>
+  <script src="includes/main.js"></script>
 </body>
 </html>
