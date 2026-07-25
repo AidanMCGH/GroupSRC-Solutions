@@ -30,7 +30,7 @@ router.post('/contact', async (req, res) => {
     // Enviar email de notificación
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'gruposrc007@gmail.com',
+      to: 'santiagoabab181@gmail.com',
       subject: 'Nuevo mensaje de contacto - SRC Solutions',
       html: `
         <h2>Nuevo Contacto</h2>
