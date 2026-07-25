@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', function () {
     navList.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
   }
 
+  /* -------------------------------- Header: transparente en el hero, sólido al salir */
+  const header = document.querySelector('.site-header');
+  const hero = document.getElementById('inicio');
+  if (header && hero && 'IntersectionObserver' in window) {
+    const headerObs = new IntersectionObserver(([entry]) => {
+      header.classList.toggle('scrolled', !entry.isIntersecting);
+    }, { rootMargin: '-64px 0px 0px 0px', threshold: 0 });
+    headerObs.observe(hero);
+  } else if (header) {
+    // Reserva sin IntersectionObserver
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > window.innerHeight * 0.7);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---------------------------------------------- Animaciones de aparición */
   const reveals = document.querySelectorAll('.reveal');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33,6 +48,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach((el) => io.observe(el));
+  }
+
+  /* ------------------------------ Videos de demostración (play solo en pantalla) */
+  const videos = document.querySelectorAll('.obra-video');
+  if (videos.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      // Sin autoplay: el usuario decide reproducir
+      videos.forEach((v) => { v.controls = true; v.preload = 'metadata'; });
+    } else {
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          const v = e.target;
+          if (e.isIntersecting) {
+            v.play().catch(() => { v.controls = true; }); // si el navegador bloquea el autoplay, mostramos controles
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.4 });
+      videos.forEach((v) => vio.observe(v));
+    }
   }
 
   /* ----------------------------------------------------------- Formulario */

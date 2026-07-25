@@ -150,17 +150,24 @@ p { max-width: 68ch; }
 
 /* ============================================================ Header / Nav */
 .site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(12,12,13,0.72);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background var(--t-transicion), border-color var(--t-transicion);
+}
+/* Aparece al salir del hero (secciones claras) */
+.site-header.scrolled {
+  background: rgba(12,12,13,0.82);
   backdrop-filter: saturate(1.4) blur(12px);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
-  border-bottom: 1px solid var(--linea-oscura);
+  border-bottom-color: var(--linea-oscura);
 }
 .site-header .container {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: var(--e4);
   min-height: 64px;
 }
-.brand { display: inline-flex; align-items: center; gap: var(--e2); }
+.brand { display: inline-flex; align-items: center; gap: var(--e2); margin-right: auto; }
+.header-cta { padding: 9px var(--e3); font-size: 12px; }
 .brand img { width: 32px; height: 32px; border-radius: 50%; }
 .brand-name { font-family: var(--display); font-variation-settings: 'wght' 600, 'wdth' 112; font-size: 16px; letter-spacing: -0.01em; color: var(--niebla); }
 
@@ -305,16 +312,14 @@ p { max-width: 68ch; }
 
 /* ========================================================= Desarrollos propios */
 .grid-obras { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e5); }
-.obra { border: 1px solid var(--linea); background: var(--blanco); display: flex; flex-direction: column; }
+.obra { border: 1px solid var(--linea); background: var(--blanco); display: flex; flex-direction: column; overflow: hidden; }
 .section-alt .obra { background: var(--niebla); }
-/* Marcador visual — reemplazar por captura real (ver TODO en HTML) */
-.obra-captura {
-  aspect-ratio: 16 / 10; background: var(--niebla);
-  border-bottom: 1px solid var(--linea);
-  display: grid; place-items: center;
+/* Video de demostración del sistema */
+.obra-media {
+  position: relative; aspect-ratio: 16 / 10; background: var(--tinta);
+  border-bottom: 1px solid var(--linea); overflow: hidden;
 }
-.section-alt .obra-captura { background: var(--blanco); }
-.obra-captura span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grafito); }
+.obra-video { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--tinta); }
 .obra-cuerpo { padding: var(--e4); display: flex; flex-direction: column; gap: var(--e3); flex: 1; }
 .obra h3 { font-size: 19px; }
 .obra p { font-size: 15px; color: var(--grafito); }
@@ -351,6 +356,13 @@ p { max-width: 68ch; }
 .dato p { font-size: 15px; color: var(--grafito); }
 
 .form-nota { font-size: 14px; color: var(--grafito); margin-top: var(--e4); max-width: none; }
+
+/* Qué pasa cuando nos escribe */
+.pasos-contacto { margin-top: var(--e6); padding-top: var(--e5); border-top: 1px solid var(--linea); }
+.pasos-contacto h3 { font-family: var(--mono); font-variation-settings: normal; font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grafito); margin-bottom: var(--e4); }
+.pasos-contacto ol { display: grid; gap: var(--e3); }
+.pasos-contacto li { display: flex; gap: var(--e3); align-items: baseline; font-size: 15px; color: var(--tinta); }
+.pasos-contacto .num { font-family: var(--mono); font-size: 13px; color: var(--senal); flex: 0 0 auto; }
 
 /* Formulario */
 .form { display: grid; gap: var(--e4); }
@@ -422,4 +434,7 @@ p { max-width: 68ch; }
 }
 @media (max-width: 480px) {
   .razones { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .brand-name { display: none; }
 }
